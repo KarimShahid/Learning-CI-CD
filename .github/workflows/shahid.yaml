@@ -32,7 +32,9 @@ jobs:
       run : |
         touch mykey.pem
         echo $SSH_KEY64 | base64 -d > mykey.pem
+        cat mykey.pem #check
         chmod 400 mykey.pem
+        ls -lah mykey.pem #check
         ssh-keygen -R $SERVER_IP 
       env:
         $SSH_KEY64: ${{ secrets.SSH_KEY64 }}
