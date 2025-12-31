@@ -37,7 +37,7 @@ jobs:
         ls -lah mykey.pem #check
         ssh-keygen -R $SERVER_IP 
       env:
-        $SSH_KEY64: ${{ secrets.SSH_KEY64 }}
+        SSH_KEY64: ${{ secrets.SSH_KEY64 }}
 
     - name: "Deploy the code to my sever"
       run: |
